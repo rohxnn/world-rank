@@ -1,27 +1,27 @@
 # WorldRank
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
+## challenge
 
-## Development server
+* Create a country ranking page that matches the given design.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+* By default, users can see a list of all countries sorted by population.
 
-## Code scaffolding
+* Users can choose to sort by name alphabetical order or population or area (km²).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Users can choose to filter by multiple regions, the regions can be Americas, Antarctic, Africa, Asia, Europe, or Oceania.
 
-## Build
+* Users can choose to filter countries that are members of the United Nations.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+* Users can choose to filter countries that are independent.
 
-## Running unit tests
+* Users can filter/search for countries by their names, regions or subregions.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* Users can see the total number of countries.
 
-## Running end-to-end tests
+* Users can select a country and see more details on a country page.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+* On the country page, users can see info like population, area, capital,....
 
-## Further help
+* On the country page, users can see the neighboring countries.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* On the country page, when users select a neighboring country, it should redirect to the according country page.
