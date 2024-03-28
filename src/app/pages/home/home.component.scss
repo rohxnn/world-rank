@@ -1,0 +1,20 @@
+.container-fluid {
+  background-color: #1B1D1F;
+  margin: 0;
+  padding: 0;
+  max-height: fit-content;
+}
+
+.logo {
+  width: 100%;
+  position: fixed;
+  top: 24%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.body {
+  background-color: #1B1D1F;
+  max-height: fit-content;
+}

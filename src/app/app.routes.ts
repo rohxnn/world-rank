@@ -3,5 +3,5 @@ import { HomeComponent } from './pages/home/home.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/world-rank', pathMatch: 'full' },
-  { path: '/world-rank', component: HomeComponent}
+  { path: 'world-rank', component: HomeComponent}
 ];
