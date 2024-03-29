@@ -1,0 +1,41 @@
+.container {
+  color: #6C727F;
+  font-family: 'Be_Vietnam_Pro';
+}
+
+.search {
+  width: 30%;
+  background-color: #282B30;
+  padding: 7px;
+}
+
+.search-box {
+  background-color: #282B30;
+  outline: none;
+  border: none;
+}
+
+select {
+  background-color: #1C1D1F;  
+  border: 1px solid #6C727F;
+  padding: 5px 10px;
+  border-radius: 5px;  
+  font-family: Arial, sans-serif;
+  cursor: pointer;  
+  color: #D2D5DA;
+  width: 200px; 
+}
+
+select:focus {  
+  outline: none;  
+  border: 1px solid #6C727F;
+}
+
+option {
+  background-color: inherit;  
+  color: inherit 
+}
+
+.btn {
+  color:#6C727F;
+}
