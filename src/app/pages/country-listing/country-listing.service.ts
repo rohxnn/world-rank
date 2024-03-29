@@ -1,7 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-//third-party
-import { Observable } from 'rxjs';
 //model
 import { CountryListing } from './country-listing.model';
 
@@ -13,12 +11,12 @@ export class CountryListingService {
   private fields: string = '?fields=name,capital,population,area,flags,borders,region,independent,unMember,subregion,languages,currencies,continents,capital'
   constructor(private http: HttpClient) { }
 
-  getCountries(): Observable<CountryListing[]> {
+  getCountries(){
     const urlWithParam = `${this.baseUrl}all/${this.fields}`
     return this.http.get<CountryListing[]>(urlWithParam);
   }
 
-  getCountriesByName(country: string): Observable<CountryListing> {
+  getCountriesByName(country: string){
     const urlWithParam = `${this.baseUrl}name/${country}`;
     return this.http.get<CountryListing>(urlWithParam);
   }
