@@ -39,3 +39,56 @@ option {
 .btn {
   color:#6C727F;
 }
+
+.checkbox-container {
+  display: flex;
+  flex-direction: row; 
+  gap: 10px; 
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ccc;
+  margin-right: 5px;
+}
+
+.checkbox-container label {
+  cursor: pointer;
+}
+/* Customize table appearance (optional) */
+table {
+  width: 100%; /* Set table width to 100% */
+  font-size: 14px; 
+}
+
+th, td {
+ /* Add thin borders to cells */
+  color:#D2D5DA ;
+  background-color: #1B1D1F; 
+  padding: 30px; /* Add some padding inside cells */
+  text-align: left; /* Align text to the left */
+  border: none;
+ /* Adjust padding for desired gap size */
+
+}
+
+th {
+  border-bottom:1px solid #6C727F;
+  color: #6C727F;
+}
+
+td {
+  font-size: 20px;
+}
+
+td:first-child { 
+  width: 80px; 
+  text-align: center; 
+}
+
+td:first-child img { 
+  width: 100%; 
+  height: auto; 
+}
+

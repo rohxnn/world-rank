@@ -13,25 +13,57 @@
     <div class="country-options w-25">
       <div class="row">
         <small>Sort by</small>
-        <div class="mt-1">
-          <select id="selectButton">
+        <div class="mt-3">
+          <select id="selectButton" [(ngModel)]="selectedValue">
             <option value="population">Population</option>
             <option value="area">Area</option>
         </select>
         </div>
       </div>
-      <div class="row mt-3">
+      <div class="row mt-5">
         <small>Region</small>
         <div class="col">
           @for(option of region; track option) {
             <button class="btn">{{option}}</button>
           }
         </div>
+        <div class="row mt-3">
+          <small>Status</small> 
+          <div class="checkbox-container mt-3">
+            <input type="checkbox" id="member-un" name="membership" value="member-un">
+            <label for="member-un">Member of the United Nations</label>
+            </div>
+            <div class="checkbox-container mt-3">
+            <input type="checkbox" id="independent" name="membership" value="independent">
+            <label for="independent">Independent</label>
+          </div>
+        </div>
           
       </div>
     </div>
     <div class="country-list w-75">
-      {{countryList | json}}
+      <table class="table tab">
+        <thead>
+          <tr>
+            <th scope="col">Flag</th>
+            <th scope="col">Name</th>
+            <th scope="col">Population</th>
+            <th scope="col">Area (km²)</th>
+            <th scope="col">Region</th>
+          </tr>
+        </thead>
+      @for(country of countryList | sort: selectedValue; track country) {
+        <tbody>
+          <tr>
+            <td><img src="{{country.flags.png}}" alt="China Flag"></td> 
+            <td>{{country.name.common}}</td>
+            <td>{{country.population | number}}</td>
+            <td>{{country.area | number}}</td>
+            <td>{{country.region}}</td>
+          </tr>
+        </tbody>
+      }
+    </table>
     </div>
   </div>
 </div>
