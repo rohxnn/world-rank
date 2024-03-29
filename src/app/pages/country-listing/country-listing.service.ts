@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+//third-party
 import { Observable } from 'rxjs';
+//model
 import { CountryListing } from './country-listing.model';
 
 @Injectable({
