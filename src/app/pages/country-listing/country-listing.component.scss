@@ -16,34 +16,46 @@
 }
 
 select {
-  background-color: #1C1D1F;  
+  background-color: #1C1D1F;
   border: 1px solid #6C727F;
   padding: 5px 10px;
-  border-radius: 5px;  
+  border-radius: 5px;
   font-family: Arial, sans-serif;
-  cursor: pointer;  
+  cursor: pointer;
   color: #D2D5DA;
-  width: 200px; 
+  width: 200px;
 }
 
-select:focus {  
-  outline: none;  
+select:focus {
+  outline: none;
   border: 1px solid #6C727F;
 }
 
 option {
-  background-color: inherit;  
-  color: inherit 
+  background-color: inherit;
+  color: inherit
+}
+
+.country-body {
+  display: flex;
+}
+
+.country-options {
+  width: 25%;
+}
+
+.country-list {
+  width: 75%;
 }
 
 .btn {
-  color:#6C727F;
+  color: #6C727F;
 }
 
 .checkbox-container {
   display: flex;
-  flex-direction: row; 
-  gap: 10px; 
+  flex-direction: row;
+  gap: 10px;
 }
 
 .checkbox-container input[type="checkbox"] {
@@ -56,25 +68,27 @@ option {
 .checkbox-container label {
   cursor: pointer;
 }
-/* Customize table appearance (optional) */
-table {
-  width: 100%; /* Set table width to 100% */
-  font-size: 14px; 
+
+tbody {
+  cursor: pointer;
 }
 
-th, td {
- /* Add thin borders to cells */
-  color:#D2D5DA ;
-  background-color: #1B1D1F; 
-  padding: 30px; /* Add some padding inside cells */
-  text-align: left; /* Align text to the left */
+th,
+td {
+  /* Add thin borders to cells */
+  color: #D2D5DA;
+  background-color: #1B1D1F;
+  padding: 30px;
+  /* Add some padding inside cells */
+  text-align: left;
+  /* Align text to the left */
   border: none;
- /* Adjust padding for desired gap size */
+  /* Adjust padding for desired gap size */
 
 }
 
 th {
-  border-bottom:1px solid #6C727F;
+  border-bottom: 1px solid #6C727F;
   color: #6C727F;
 }
 
@@ -82,13 +96,54 @@ td {
   font-size: 20px;
 }
 
-td:first-child { 
-  width: 80px; 
-  text-align: center; 
+td:first-child {
+  width: 80px;
+  text-align: center;
 }
 
-td:first-child img { 
-  width: 100%; 
-  height: auto; 
+td:first-child img {
+  width: 100%;
+  height: auto;
 }
 
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+  }
+
+  .search,
+  select {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .checkbox-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .country-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .country-options {
+    width: 100%;
+  }
+
+  .country-list {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .checkbox-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+}
