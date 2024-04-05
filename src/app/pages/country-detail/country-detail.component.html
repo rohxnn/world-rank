@@ -1,1 +1,69 @@
-<p>country-detail works!</p>
+<div class="container">
+  <div class="d-flex justify-content-center">
+    <img src="{{ countryDetail?.[0]?.flags?.png }}" alt>
+  </div>
+  <header class="row">
+    <div class="col-md-12 text-center">
+      <h1>{{ countryDetail?.[0]?.name.common}}</h1>
+      <p>{{ countryDetail?.[0]?.name.official}}</p>
+    </div>
+  </header>
+  <main class="row">
+    <div class="d-flex justify-content-center gap-5">
+      <div class="w-25 box rounded">
+        <p class="text-center">Population: <span class="blockquote">{{
+            countryDetail?.[0]?.population }}</span></p>
+      </div>
+      <div class="text-center w-25 box rounded">
+        <p>Area (km²): <span class="blockquote">{{ countryDetail?.[0]?.area
+            }}</span></p>
+      </div>
+    </div>
+  </main>
+  <section class="row mt-3">
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td>Capital</td>
+            <td>{{ countryDetail?.[0]?.capital }}</td>
+          </tr>
+          <tr>
+            <td>Languages</td>
+            <td>
+              <ng-container
+                *ngFor="let language of countryDetail?.[0]?.languages | keyvalue; let last = last">
+                {{ language.value }}<span *ngIf="!last">,</span>
+              </ng-container>
+            </td>
+          </tr>
+          <tr>
+            <td>Currency</td>
+            <td>
+              <ng-container
+                *ngFor="let currency of countryDetail?.[0]?.currencies | keyvalue; let last = last">
+                {{ getCurrencyName(currency.value) }}
+              </ng-container>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Continents</td>
+            <td>{{countryDetail?.[0].continents}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Neighbouring Countries</p>
+      <div class="row">
+        @for(code of countryCodeListing; track code){ 
+          <ng-container>
+            <div class="col-sm-6 col-md-4 col-lg-1">
+              <img src="{{code?.flags?.png}}" class="img-fluid" alt="" width="100">
+              <p class="text-center">{{code?.name?.common}}</p>
+            </div>
+          </ng-container>
+        }
+      </div>
+    </div>
+  </section>
+</div>
