@@ -2,8 +2,7 @@
   background-color: #1B1D1F;
   margin: 0;
   padding: 0;
-  height: 1000vh;
-  background-color: #1B1D1F;
+  min-height: 100vh; // Changed from a fixed height to min-height
   width: 100%;
 }
 
@@ -14,7 +13,7 @@
 .logo {
   width: 100%;
   position: absolute;
-  top: 24%;
+  top: 20%; // Adjusted for better responsiveness
   margin: auto;
   display: flex;
   justify-content: center;
@@ -24,10 +23,18 @@
   width: 100%;
 }
 .content-body {
-  margin-left: 50px;
-  position: absolute;
-  top: 280px;
+  margin: 20px auto; // Center content-body horizontally
   padding: 20px;
-  width: 90%;
+  width: 90%; // Adjust width or use max-width for larger screens
   background-color: #1C1D1F;
+  position: relative; // Changed from absolute to relative
+  box-sizing: border-box; // Ensure padding is included in width calculation
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .logo {
+    top: 5%; // Adjust logo position on smaller screens
+  }
+
 }
