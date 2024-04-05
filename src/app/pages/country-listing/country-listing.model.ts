@@ -3,7 +3,7 @@ export class CountryListing {
   capital: string[];
   population: number;
   area: number;
-  flag: string;
+  flags: any;
   borders: any[];
   region: string;
   independent: boolean;
@@ -18,7 +18,7 @@ export class CountryListing {
     this.capital = data.capital || [];
     this.population = data.population;
     this.area = data.area;
-    this.flag = data.flags.png;
+    this.flags = data.flags.png;
     this.borders = data.borders || [];
     this.region = data.region;
     this.independent = data.independent;

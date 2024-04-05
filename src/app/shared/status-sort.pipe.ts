@@ -8,9 +8,7 @@ import { CountryListing } from '../pages/country-listing/country-listing.model';
 })
 export class StatusSortPipe implements PipeTransform {
 
-  transform(countryList: CountryListing[], status: string): CountryListing[] {
-    console.log(status);
-    
+  transform(countryList: CountryListing[], status: string): CountryListing[] {  
     if (status === 'unMember') {
       return countryList.filter(country => country.unMember === true);
     } else if (status === 'independent') {
@@ -19,5 +17,4 @@ export class StatusSortPipe implements PipeTransform {
       return countryList;
     }
   }
-
 }
