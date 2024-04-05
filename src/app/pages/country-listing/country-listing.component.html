@@ -1,12 +1,12 @@
 <div class="container">
   <div class="country-search d-flex justify-content-between">
     <div>
-      <p class="fw-bold">Found {{countryList.length}} Countries</p>
+      <h2 class="">Found {{countryList.length}} Countries</h2>
     </div>
     <div class="search d-flex rounded">
       <img src="././assets/images/Search.svg" alt>
       <input type="search" placeholder="Search by Name, Region, Subregion"
-        class="w-100 search-box">
+        class="w-100 search-box" [(ngModel)]="searchValue">
     </div>
   </div>
   <div class="country-body w-100 d-flex mt-5">
@@ -30,19 +30,18 @@
         <div class="row mt-3">
           <small>Status</small> 
           <div class="checkbox-container mt-3">
-            <input type="checkbox" id="member-un" name="membership" value="member-un">
+            <input type="checkbox" id="member-un" name="membership" >
             <label for="member-un">Member of the United Nations</label>
             </div>
             <div class="checkbox-container mt-3">
-            <input type="checkbox" id="independent" name="membership" value="independent">
+            <input type="checkbox" id="independent" name="membership">
             <label for="independent">Independent</label>
           </div>
         </div>
-          
       </div>
     </div>
     <div class="country-list w-75">
-      <table class="table tab">
+      <table class="table">
         <thead>
           <tr>
             <th scope="col">Flag</th>
@@ -52,10 +51,11 @@
             <th scope="col">Region</th>
           </tr>
         </thead>
-      @for(country of countryList | sort: selectedValue; track country) {
-        <tbody>
+
+      @for(country of countryList | sort: selectedValue | search: searchValue; track country;) {
+        <tbody [routerLink]="[country.name.common]">
           <tr>
-            <td><img src="{{country.flags.png}}" alt="China Flag"></td> 
+            <td><img src="{{country.flags.png}}" alt=""></td> 
             <td>{{country.name.common}}</td>
             <td>{{country.population | number}}</td>
             <td>{{country.area | number}}</td>
