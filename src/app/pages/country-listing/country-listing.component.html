@@ -9,8 +9,8 @@
         class="w-100 search-box" [(ngModel)]="searchValue">
     </div>
   </div>
-  <div class="country-body w-100 d-flex mt-5">
-    <div class="country-options w-25">
+  <div class="country-body mt-5">
+    <div class="country-options">
       <div class="row">
         <small>Sort by</small>
         <div class="mt-3">
@@ -40,8 +40,8 @@
         </div>
       </div>
     </div>
-    <div class="country-list w-75">
-      <table class="table">
+    <div class="country-list">
+      <table class="table table-responsive">
         <thead>
           <tr>
             <th scope="col">Flag</th>
@@ -55,7 +55,7 @@
       @for(country of countryList | sort: selectedValue | search: searchValue; track country;) {
         <tbody [routerLink]="[country.name.common]">
           <tr>
-            <td><img src="{{country.flags.png}}" alt=""></td> 
+            <td><img src="{{country.flags.png}}" alt="" class="img-fluid"></td> 
             <td>{{country.name.common}}</td>
             <td>{{country.population | number}}</td>
             <td>{{country.area | number}}</td>
