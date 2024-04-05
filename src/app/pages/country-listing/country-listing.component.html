@@ -30,11 +30,11 @@
         <div class="row mt-3">
           <small>Status</small> 
           <div class="checkbox-container mt-3">
-            <input type="checkbox" id="member-un" name="membership" >
+            <input type="checkbox" id="member-un" name="membership" (change)="onStatusChange($any($event.target).checked ? 'unMember' : '')">
             <label for="member-un">Member of the United Nations</label>
-            </div>
-            <div class="checkbox-container mt-3">
-            <input type="checkbox" id="independent" name="membership">
+          </div>
+          <div class="checkbox-container mt-3">
+            <input type="checkbox" id="independent" name="membership" (change)="onStatusChange($any($event.target).checked ? 'independent' : '')">
             <label for="independent">Independent</label>
           </div>
         </div>
@@ -52,10 +52,10 @@
           </tr>
         </thead>
 
-      @for(country of countryList | sort: selectedValue | search: searchValue; track country;) {
+      @for(country of countryList | sort: selectedValue | search: searchValue | statusfilter: status; track country; let i = $index) {
         <tbody [routerLink]="[country.name.common]">
           <tr>
-            <td><img src="{{country.flags.png}}" alt="" class="img-fluid"></td> 
+            <td><img src="{{country.flags?.png}}" alt="" class="img-fluid"></td> 
             <td>{{country.name.common}}</td>
             <td>{{country.population | number}}</td>
             <td>{{country.area | number}}</td>

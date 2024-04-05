@@ -9,6 +9,7 @@ import { CountryListing } from './country-listing.model';
 //pipe
 import { SortPipe } from '../../shared/sort.pipe';
 import { SearchPipe } from '../../shared/search.pipe';
+import { StatusSortPipe } from '../../shared/status-sort.pipe';
 
 @Component({
   selector: 'app-country-listing',
@@ -18,7 +19,8 @@ import { SearchPipe } from '../../shared/search.pipe';
     FormsModule,
     RouterLink,
     SortPipe,
-    SearchPipe
+    SearchPipe,
+    StatusSortPipe
   ],
   templateUrl: './country-listing.component.html',
   styleUrls: ['./country-listing.component.scss']
@@ -28,6 +30,7 @@ export class CountryListingComponent implements OnInit {
   selectedValue: string = 'population';
   region: any = [];
   searchValue: string;
+  status: string;
 
   constructor(private countryListingService: CountryListingService) {}
 
@@ -44,5 +47,9 @@ export class CountryListingComponent implements OnInit {
     } catch (error) {
       console.error(error.message);
     }
+  }
+
+  onStatusChange(status: string) {
+    this.status = status;
   }
 }
