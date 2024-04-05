@@ -4,13 +4,13 @@ export class CountryListing {
   population: number;
   area: number;
   flag: string;
-  borders: string[];
+  borders: any[];
   region: string;
   independent: boolean;
   unMember: boolean; // Assuming 'unmember' refers to UN membership status
   subregion: string;
   languages: { [code: string]: string }; // Object for language codes and names
-  currencies: { [code: string]: { name: string } }; // Object for currency codes and names
+  currencies: { [code: string]: { name: string; symbol: string } }; // Object for currency codes and names
   continents: string[];
 
   constructor(data: any) {
