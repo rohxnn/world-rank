@@ -27,6 +27,13 @@ body {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1000px) {
+  .table th,
+  .table td {
+    font-size: 0.8rem; // Adjust font size as desired
+  }
+}
+
 .search {
   width: 30%;
   background-color: $secondary-color;
@@ -95,7 +102,7 @@ td:first-child img {
 // Country options
 
 .country-options {
-  width: 25%;
+  width: 30%;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -105,7 +112,7 @@ td:first-child img {
 // Country list
 
 .country-list {
-  width: 75%;
+  width: 70%;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -171,5 +178,3 @@ th {
 .region-color {
   background-color: $secondary-color;
 }
-
-// Additional styles for specific elements or states can be added here

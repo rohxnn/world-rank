@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   min-height: 100vh; // Changed from a fixed height to min-height
-  width: 100%;
 }
 
 .img {
@@ -25,7 +24,6 @@
 .content-body {
   margin: 20px auto; // Center content-body horizontally
   padding: 20px;
-  width: 90%; // Adjust width or use max-width for larger screens
   background-color: #1C1D1F;
   position: relative; // Changed from absolute to relative
   top: -80px;
