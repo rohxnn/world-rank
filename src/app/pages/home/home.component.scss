@@ -1,0 +1,45 @@
+.container-fluid {
+  background-color: #1B1D1F;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; // Changed from a fixed height to min-height
+  width: 100%;
+}
+
+.img {
+  width: 100%;
+}
+
+.logo {
+  width: 100%;
+  position: absolute;
+  top: 20%; // Adjusted for better responsiveness
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.body {
+  width: 100%;
+}
+.content-body {
+  margin: 20px auto; // Center content-body horizontally
+  padding: 20px;
+  width: 90%; // Adjust width or use max-width for larger screens
+  background-color: #1C1D1F;
+  position: relative; // Changed from absolute to relative
+  top: -80px;
+  box-sizing: border-box; // Ensure padding is included in width calculation
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .logo {
+    top: 5%; // Adjust logo position on smaller screens
+  }
+
+  .content-body {
+    position: relative; // Changed from absolute to relative
+    top: 0; 
+  }
+}
