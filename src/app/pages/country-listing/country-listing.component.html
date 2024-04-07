@@ -1,7 +1,7 @@
 <div class="container">
   <div class="country-search d-flex justify-content-between">
     <div>
-      <h2 class>Found {{filteredCountryList.length}} Countries</h2>
+      <h2 class>Found {{ filteredCountryList?.length }} Countries</h2>
     </div>
     <div class="search d-flex rounded">
       <img src="././assets/images/Search.svg" alt>
@@ -45,7 +45,7 @@
       </div>
     </div>
     <div class="country-list">
-      <table class="table table-responsive">
+      <table class="table">
         <thead>
           <tr>
             <th scope="col">Flag</th>

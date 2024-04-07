@@ -1,19 +1,51 @@
+// Base styles (consider creating a separate _base.scss file)
+
+$primary-color: #1B1D1F;
+$secondary-color: #282B30;
+$text-color: #6C727F;
+$font-family: 'Be_Vietnam_Pro';
+$base-font-size: 16px;
+
+body {
+  background-color: $primary-color;
+  margin: 0;
+  font-family: $font-family;
+  font-size: $base-font-size;
+}
+
+
+// Container and Search
+
 .container {
-  color: #6C727F;
-  font-family: 'Be_Vietnam_Pro';
+  color: $text-color;
+  padding: 1rem;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
 
 .search {
   width: 30%;
-  background-color: #282B30;
+  background-color: $secondary-color;
   padding: 7px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }
 
+// Search box (can be included within .search)
 .search-box {
-  background-color: #282B30;
+  background-color: $secondary-color;
   outline: none;
   border: none;
 }
+
+// Select element
 
 select {
   background-color: #1C1D1F;
@@ -31,31 +63,73 @@ select:focus {
   border: 1px solid #6C727F;
 }
 
-option {
-  background-color: inherit;
-  color: inherit
+td:first-child {
+  width: 100px;
+  text-align: center;
 }
+
+td:first-child img {
+  width: 100%;
+  height: auto;
+}
+
+// Option element
+
+.select option {
+  background-color: inherit;
+  color: inherit;
+}
+
+// Country body
 
 .country-body {
   display: flex;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 }
+
+// Country options
 
 .country-options {
   width: 25%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
+
+// Country list
 
 .country-list {
   width: 75%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    overflow-x: auto;
+  }
 }
 
+// Button
+
 .btn {
-  color: #6C727F;
+  color: $text-color;
 }
+
+// Checkbox container
 
 .checkbox-container {
   display: flex;
   flex-direction: row;
   gap: 10px;
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
 }
 
 .checkbox-container input[type="checkbox"] {
@@ -69,86 +143,33 @@ option {
   cursor: pointer;
 }
 
-tbody {
-  cursor: pointer;
+// Table
+
+.table {
+  width: 100%;
 }
 
 th,
 td {
-  /* Add thin borders to cells */
-  color: #D2D5DA;
-  background-color: #1B1D1F;
-  padding: 30px;
-  /* Add some padding inside cells */
+  padding: 1rem;
+  font-size: 20px;
+  color: $text-color;
+  background-color: $primary-color;
   text-align: left;
-  /* Align text to the left */
   border: none;
-  /* Adjust padding for desired gap size */
 
+  @media (max-width: 320px) {
+    font-size: 0.7rem; // Adjust for very small screens
+  }
 }
 
 th {
-  border-bottom: 1px solid #6C727F;
-  color: #6C727F;
-}
-
-td {
-  font-size: 20px;
-}
-
-td:first-child {
-  width: 80px;
-  text-align: center;
-}
-
-td:first-child img {
-  width: 100%;
-  height: auto;
+  border-bottom: 1px solid $text-color;
+  color: $text-color;
 }
 
 .region-color {
-  background-color: #282B30;
+  background-color: $secondary-color;
 }
 
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-  }
-
-  .search,
-  select {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  .checkbox-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .country-body {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .country-options {
-    width: 100%;
-  }
-
-  .country-list {
-    width: 100%;
-    overflow-x: auto;
-  }
-
-  .checkbox-container {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-  }
-
-}
+// Additional styles for specific elements or states can be added here
