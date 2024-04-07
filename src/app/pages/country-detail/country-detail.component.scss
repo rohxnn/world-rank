@@ -31,7 +31,10 @@ main.row {
     background-color: #282B30; // Make boxes full width on smaller screens
 
     @media (max-width: 576px) {
-      font-size: 0.9rem; // Adjust font size for very small screens
+      span {
+        font-size: 0.7rem; // Adjust font size for very small screens
+      }
+     
     }
   }
 }
