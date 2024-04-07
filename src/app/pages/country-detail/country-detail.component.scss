@@ -20,7 +20,18 @@ th,td {
 .table {
   border-color: #282B30;
 }
-.box {
-  background-color: #282B30;
-  padding: 5px;
+main.row {
+  @media (max-width: 768px) {
+    flex-wrap: wrap; // Allow elements to wrap on smaller screens
+  }
+
+  .box {
+    margin: 1rem 0; // Add some margin for spacing on smaller screens
+    width: 100%;
+    background-color: #282B30; // Make boxes full width on smaller screens
+
+    @media (max-width: 576px) {
+      font-size: 0.9rem; // Adjust font size for very small screens
+    }
+  }
 }
