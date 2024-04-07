@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 import { RouterLink } from '@angular/router';
 //service
 import { CountryListingService } from './country-listing.service';
@@ -17,6 +17,7 @@ import { StatusSortPipe } from '../../shared/status-sort.pipe';
   imports: [
     CommonModule,
     FormsModule,
+    NgClass,
     RouterLink,
     SortPipe,
     SearchPipe,
@@ -31,8 +32,10 @@ export class CountryListingComponent implements OnInit {
   region: any = [];
   searchValue: string;
   status: string;
+  filteredCountryList: any;
+  selectedRegion: string[] = [];
 
-  constructor(private countryListingService: CountryListingService) {}
+  constructor(private countryListingService: CountryListingService) { }
 
   ngOnInit() {
     this.getCountryList();
@@ -42,10 +45,28 @@ export class CountryListingComponent implements OnInit {
     try {
       const response = await this.countryListingService.getCountries().toPromise();
       this.countryList = response;
+      this.filteredCountryList = this.countryList;
       this.region = [...new Set(this.countryList.map(data => data.region))];
       this.region.sort();
     } catch (error) {
       console.error(error.message);
+    }
+  }
+
+  onClickRegion(region: string) {
+    if (!this.selectedRegion.includes(region)) {
+      this.selectedRegion.push(region);
+      if (this.filteredCountryList.some(data => data.region.includes(region))) {
+        this.filteredCountryList = this.filteredCountryList.filter((country => country.region === region));
+      } else {
+        this.filteredCountryList = this.filteredCountryList.concat(this.countryList.filter(country => country.region === region));
+      }
+    } else {
+      this.filteredCountryList = this.filteredCountryList.filter(country => country.region != region);
+      this.selectedRegion = this.selectedRegion.filter((r) => r !== region);
+      if (this.selectedRegion.length === 0) {
+        this.filteredCountryList = this.countryList
+      }
     }
   }
 

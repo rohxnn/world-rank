@@ -106,6 +106,10 @@ td:first-child img {
   height: auto;
 }
 
+.region-color {
+  background-color: #282B30;
+}
+
 /* Media query for smaller screens */
 @media (max-width: 768px) {
   .container {
@@ -146,4 +150,5 @@ td:first-child img {
     flex-direction: row;
     gap: 10px;
   }
+
 }
